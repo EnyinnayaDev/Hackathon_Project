@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Page config
 st.set_page_config(
-    page_title="CampusAI Assistant - FUTO",
+    page_title="CampusAI Assistant",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -15,7 +15,7 @@ st.set_page_config(
 st.markdown("""
     <style>
     .main-header {
-        font-size: 3rem;
+        font-size: 50rem;
         font-weight: bold;
         text-align: center;
         color: #1f77b4;
@@ -55,14 +55,14 @@ if "conversation_id" not in st.session_state:
 
 # Title and description
 st.markdown('<p class="main-header">🎓 CampusAI Assistant</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-header">Your AI-powered guide for FUTO freshers</p>', unsafe_allow_html=True)
+st.markdown('<p class="sub-header">Your AI-powered guide for freshers on campus</p>', unsafe_allow_html=True)
 st.markdown("---")
 
 # Sidebar
 with st.sidebar:
     st.header("ℹ️ About CampusAI")
     st.info("""
-    **CampusAI Assistant** helps FUTO freshers navigate campus life by answering common questions about:
+    **CampusAI Assistant** helps freshers navigate campus life by answering common questions about:
     
     ✅ School fees payment  
     ✅ Clearance process  
@@ -123,6 +123,7 @@ with st.sidebar:
     st.markdown("---")
     st.caption("Built with ❤️ for FUTO Freshers")
     st.caption(f"© {datetime.now().year} CampusAI")
+    st.caption("Dev Enyinnaya")
 
 # Main chat interface
 st.header("💬 Ask Me Anything!")
@@ -133,23 +134,66 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     if st.button("💰 School Fees", use_container_width=True):
-        st.session_state.messages.append({"role": "user", "content": "How do I pay school fees?"})
+        st.session_state.pending_prompt = "How do I pay school fees?"
         st.rerun()
 
 with col2:
     if st.button("📝 Clearance", use_container_width=True):
-        st.session_state.messages.append({"role": "user", "content": "Where do I do clearance?"})
+        st.session_state.pending_prompt = "Where do I do clearance?"
         st.rerun()
 
 with col3:
     if st.button("📚 Timetable", use_container_width=True):
-        st.session_state.messages.append({"role": "user", "content": "How do I get my timetable?"})
+        st.session_state.pending_prompt = "How do I get my timetable?"
         st.rerun()
 
 with col4:
     if st.button("👥 Group Chat", use_container_width=True):
-        st.session_state.messages.append({"role": "user", "content": "How do I join my department group chat?"})
+        st.session_state.pending_prompt = "How do I join my department group chat?"
         st.rerun()
+        
+# Handle quick-button prompt
+if "pending_prompt" in st.session_state:
+    prompt = st.session_state.pop("pending_prompt")
+
+    # Add user message to chat
+    st.session_state.messages.append({"role": "user", "content": prompt})
+
+    # Display user message
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
+    # Now trigger the same API request as below
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            try:
+                request_data = {"question": prompt}
+
+                if st.session_state.conversation_id:
+                    request_data["conversation_id"] = st.session_state.conversation_id
+
+                response = requests.post(f"{API_URL}/chat/ask", json=request_data, timeout=10)
+
+                if response.status_code == 200:
+                    data = response.json()
+                    answer = data["answer"]
+                    related_topics = data.get("related_topics", [])
+                    conversation_id = data.get("conversation_id")
+
+                    if conversation_id:
+                        st.session_state.conversation_id = conversation_id
+
+                    st.markdown(answer)
+
+                    st.session_state.messages.append({
+                        "role": "assistant",
+                        "content": answer,
+                        "related": related_topics
+                    })
+                else:
+                    st.error("Error processing your question.")
+            except Exception as e:
+                st.error(f"An error occurred: {str(e)}")
 
 st.markdown("---")
 
@@ -164,7 +208,7 @@ with chat_container:
                     st.caption(f"💡 Related topics: {', '.join(message['related'])}")
 
 # Chat input
-if prompt := st.chat_input("Ask about FUTO campus life... (e.g., 'What is MSRC?')"):
+if prompt := st.chat_input("Ask about campus life... (e.g., 'What is MSRC?')"):
     # Add user message
     st.session_state.messages.append({"role": "user", "content": prompt})
     

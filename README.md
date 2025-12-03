@@ -155,7 +155,7 @@ streamlit run app.py
 
 ## 🎬 Demo
 
-[Demo Video Link](https://twitter.com/yourhandle/status/...)
+[Demo Video Link](https://x.com/Dev_Enyinnaya/status/1996317254812619099?s=20)
 
 ## 🔑 Key Features Explained
 
