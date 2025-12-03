@@ -35,6 +35,23 @@ def find_best_answer(query: str, conversation_context: dict = None) -> Dict[str,
     """Find the best matching answer from knowledge base with context awareness"""
     query_lower = query.lower()
     
+    # Handle greetings - ADD THIS BLOCK
+    greetings = ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings"]
+    if any(greeting in query_lower for greeting in greetings):
+        return {
+            "answer": "Hello! 👋 Welcome to CampusAI Assistant for FUTO!\n\n"
+                     "I'm here to help you with:\n"
+                     "• School fees payment\n"
+                     "• Clearance process\n"
+                     "• Finding lecture halls\n"
+                     "• Joining your department group chat\n"
+                     "• Student ID cards\n"
+                     "• And much more!\n\n"
+                     "What would you like to know about campus life?",
+            "source": "CampusAI",
+            "category": "greeting"
+        }
+    
     # Enhanced keyword mapping
     keyword_map = {
         "fee": "fees",
