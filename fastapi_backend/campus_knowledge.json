@@ -1,0 +1,64 @@
+{
+  "general_info": {
+    "campus_name": "Federal University of Technology Owerri",
+    "short_name": "FUTO",
+    "location": "Owerri, Imo State, Nigeria",
+    "founded": "1980"
+  },
+  "faqs": {
+    "fees": "To pay school fees, go to the school portal. Check your Gmail for the portal link and payment instructions. You'll need your student ID and the payment invoice from the portal.",
+    "school_fees": "To pay school fees, go to the school portal. Check your Gmail for the portal link and payment instructions. You'll need your student ID and the payment invoice from the portal.",
+    "payment": "To pay school fees, go to the school portal. Check your Gmail for the portal link and payment instructions. You'll need your student ID and the payment invoice from the portal.",
+    "portal": "Check your Gmail for the school portal link. The portal is where you pay fees, register courses, and check results. Your login details were sent to your email.",
+    "clearance": "Clearance is done at the ICT building, ground floor. Bring all necessary documents including proof of payment, course registration form, and any clearance forms from your department.",
+    "ict": "The ICT building is where you do clearance (ground floor), get your student ID, and access IT services. It's one of the main buildings on campus.",
+    "lecture_hall": "To find your lecture hall, check your timetable. You can get your timetable from your department group chat. Your MSRC (Student Representative) will share it there.",
+    "timetable": "Get your timetable from your department group chat. Your MSRC (Student Representative) usually shares it there. You can also check your department notice board.",
+    "class": "To find your lecture hall, check your timetable. You can get your timetable from your department group chat. Your MSRC (Student Representative) will share it there.",
+    "group_chat": "To enter your department group chat, ask your MSRC (Student Representative). They will add you to the WhatsApp or Telegram group. This is where you'll get timetables, announcements, and important updates.",
+    "msrc": "MSRC stands for Student Representative. They represent students in your department, manage the department group chat, and help with information. Ask your course mates or check the department notice board to find your MSRC.",
+    "student_representative": "Your Student Representative (MSRC) manages the department group chat and helps with information. Ask your course mates or check the department notice board to find them.",
+    "department": "You're in the Software Engineering department. To find the department location, ask your MSRC (Student Representative) or check with senior students in your group chat.",
+    "dept": "You're in the Software Engineering department. To find the department location, ask your MSRC (Student Representative) or check with senior students in your group chat.",
+    "software_engineering": "The Software Engineering department is part of SEET (School of Engineering and Engineering Technology). Your MSRC can guide you to the exact location and introduce you to the HOD's office.",
+    "registration": "Course registration is done online through the school portal. Check your Gmail for the portal link. You'll also need to visit your department for physical verification and adviser's signature.",
+    "hostel": "For hostel accommodation, check the school portal or visit the Student Affairs office. Hostel allocation is usually done online and announced via email and notice boards.",
+    "library": "The FUTO library is open to all students. Bring your student ID card for entry. Check the library notice board or your group chat for opening hours.",
+    "id_card": "Get your student ID card from the ICT building. You'll need passport photographs and proof of admission. Check your department group chat for the exact requirements and processing time.",
+    "result": "Check your results on the school portal. The link is in your Gmail. Results are usually released 4-6 weeks after exams. You can also check the department notice board.",
+    "exam": "Exam timetables are posted on department notice boards and shared in your group chat by the MSRC. You must have 75% attendance to be eligible to write exams.",
+    "attendance": "You need at least 75% attendance in each course to be eligible for exams. Lecturers take attendance during lectures. Keep track of your attendance.",
+    "course_adviser": "Your course adviser helps with course registration and academic guidance. Visit the department to find out who your course adviser is. Your MSRC can also help with this.",
+    "gmail": "Check your Gmail regularly! The school sends important information including portal links, payment instructions, exam schedules, and official announcements to your student email.",
+    "email": "Check your Gmail regularly! The school sends important information including portal links, payment instructions, exam schedules, and official announcements to your student email."
+  },
+  "locations": {
+    "ict_building": "ICT building - Ground floor for clearance, upper floors for IT services and student ID card processing",
+    "library": "Main Library - Central location on campus, requires student ID for entry",
+    "student_affairs": "Student Affairs Office - For hostel, welfare, and general student issues",
+    "software_engineering": "Software Engineering Department - Part of SEET (School of Engineering and Engineering Technology)"
+  },
+  "important_contacts": {
+    "msrc": "Your Student Representative - Contact through department group chat",
+    "course_adviser": "Visit department office for course adviser assignment",
+    "ict_support": "ICT Building, ground floor"
+  },
+  "quick_tips": [
+    "Check your Gmail daily for important school announcements",
+    "Join your department group chat ASAP - ask your MSRC",
+    "Save your MSRC's contact immediately",
+    "Download your timetable from the group chat",
+    "Always carry your student ID card",
+    "Keep your course registration slip safe",
+    "Screenshot important announcements from group chat",
+    "Visit your department on your first day to locate it",
+    "Make friends with senior students - they help a lot",
+    "Attend all classes - 75% attendance is mandatory for exams"
+  ],
+  "context_keywords": {
+    "where_is": ["location", "where", "find", "located"],
+    "how_to": ["how", "process", "steps", "procedure"],
+    "what_is": ["what", "meaning", "stands for", "definition"],
+    "cost": ["cost", "price", "amount", "fee", "pay"]
+  }
+}
