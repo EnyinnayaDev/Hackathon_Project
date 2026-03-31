@@ -44,7 +44,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # API endpoint
-API_URL = "http://localhost:8000"
+API_URL = "https://hackathon-project-5.onrender.com"
 
 # Initialize session state
 if "messages" not in st.session_state:
@@ -54,7 +54,7 @@ if "conversation_id" not in st.session_state:
     st.session_state.conversation_id = None
 
 # Title and description
-st.markdown('<p class="main-header">🎓 CampusAI Assistant</p>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header">🎓 CampusAI Assistant</h1>', unsafe_allow_html=True)
 st.markdown('<p class="sub-header">Your AI-powered guide for freshers on campus</p>', unsafe_allow_html=True)
 st.markdown("---")
 
